@@ -10,7 +10,7 @@ function botoesLigaDesliga(estadoLiga, estadoDesliga) {
 
 }
 
-function lampBreak(){
+function lampBreak2() {
     return lampada.src.includes("quebrada")
 }
 
@@ -20,7 +20,7 @@ function lampOn() {
   //  const botaoLigar = document.getElementById("ligar")
     //const botaoDesligar = document.getElementById("desligar")
 
-    if(!lampBreak()){
+    if(!lampBreak2()){
         lampada.src = "img/ligada.jpg"
         botoesLigaDesliga(true, false)
     }
@@ -30,7 +30,7 @@ function lampOff(){
   //  const botaoLigar = document.getElementById("ligar")
     //const botaoDesligar = document.getElementById("desligar")
 
-    if(!lampBreak()){
+    if(!lampBreak2()){
         lampada.src = "img/desligada.jpg"
         botoesLigaDesliga(false, true)
     }
