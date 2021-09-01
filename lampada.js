@@ -1,12 +1,15 @@
 "use strict"
 const lampada = document.getElementById("lampada")
+let idLigar
+let idDesligar
 
-
-function botoesLigaDesliga(estadoLiga, estadoDesliga) {
+function botoesLigaDesliga(estadoLiga, estadoDesliga, estadoPiscar) {
     const botaoLigar = document.getElementById("ligar")
     const botaoDesligar = document.getElementById("desligar")
+    const botaoPiscar = document.getElementById("piscar")
     botaoLigar.disabled = estadoLiga
     botaoDesligar.disabled = estadoDesliga
+    botaoPiscar.disabled = estadoPiscar
 
 }
 
@@ -40,11 +43,26 @@ function lampBreak(){
     //const botaoDesligar = document.getElementById("desligar")
 
     lampada.src = "img/quebrada.jpg"
-    botoesLigaDesliga(true, true)
+    botoesLigaDesliga(true, true, true)
+}
+function pararPiscar(){
+    clearInterval(idLigar)
+    clearInterval(idDesligar)
 }
 
+function piscar(){
+    const botaoPiscar = document.getElementById("piscar")
+    if (botaoPiscar.textContent == "Piscar"){
+    idLigar = setInterval(lampOn, 500)
+    idDesligar = setInterval(lampOff, 1000)
+    botaoPiscar.textContent = "Parar"
+    }else{
+        pararPiscar()
+        botaoPiscar.textContent = "Piscar"
+    }
+}
 
-// eventos
+   // eventos
 document.getElementById('ligar')
     .addEventListener("click", lampOn)
 document.getElementById('desligar')
@@ -55,3 +73,5 @@ document.getElementById("lampada")
     .addEventListener("mouseleave", lampOff)
 document.getElementById('lampada')
     .addEventListener("dblclick", lampBreak)
+document.getElementById("piscar")
+    .addEventListener("click", piscar)
