@@ -64,7 +64,7 @@ function piscar(){
     }else{
         pararPiscar()
         botaoPiscar.textContent = "Piscar"
-        botaoPiscar.style.backgroundColor = "#00FF00"//**Botão verde */
+        botaoPiscar.style.backgroundColor = "#00FF00"//**Botão verde  */
     }
 }
 
