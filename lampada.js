@@ -57,12 +57,14 @@ function piscar(){
     if (botaoPiscar.textContent == "Piscar"){
     idLigar = setInterval(lampOn, 500)
     idDesligar = setInterval(lampOff, 1000)
-    botaoPiscar.style.backgroundColor = "#FF0000"
+    botaoPiscar.style.backgroundColor = "#FF0000" /**
+     Botão vermelho
+     */
     botaoPiscar.textContent = "Parar"
     }else{
         pararPiscar()
         botaoPiscar.textContent = "Piscar"
-        botaoPiscar.style.backgroundColor = "#00FF00"
+        botaoPiscar.style.backgroundColor = "#00FF00"//**Botão verde */
     }
 }
 
