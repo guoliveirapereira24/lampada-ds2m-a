@@ -68,7 +68,7 @@ function piscar(){
     }
 }
 
-   // eventos
+   //  eventos
 document.getElementById('ligar')
     .addEventListener("click", lampOn)
 document.getElementById('desligar')
